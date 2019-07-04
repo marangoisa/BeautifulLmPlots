@@ -29,12 +29,13 @@ zipfslaw<-function(data,var,name, namevar,sepa,color,width,pointsize,height,adre
     if(abs(data$var[i]-data$var[i-1])>=diftpos_m){data$name_short[i]<-as.character(data$name_full[i])}}
   abl<-lm(log(data$rank)~log(data$var))
   abls<-summary(abl)
-  png(filename=paste0(getwd(),"/",name,".png"),
-      width=width,
-      pointsize=pointsize,
-      height=height)
+  #png(filename=paste0(getwd(),"/",name,".png"),
+   #   width=width,
+    #  pointsize=pointsize,
+     # height=height)
   plot(log(data$var[data$rank>0]),log(data$rank[data$rank>0]),pch=16,main=paste0("Zipf Regression: ",namevarln),xlab=paste0("Log(",namevar,")"),ylab=paste0("Log(Rank ",namevar,")"),xlim=c(min(log(data$var[data$rank>0]),na.rm=TRUE)-1,max(log(data$var[data$rank>0]),na.rm=TRUE)+1),family="serif")
   text(log(data$var),log(data$rank),data$name_short,pos=4,col=color,family="serif")
   abline(abl)
   text(min(log(data$var[data$rank>0]),na.rm=TRUE)*1,1,paste0('Log(Rank ',namevar,')= ',round(summary(abl)$coefficients[1],2),round(summary(abl)$coefficients[2],2),"(Log(",namevar,"))","  R2=",round(abls$r.squared,2)),family="serif")
-  dev.off()}
+  }
+  #dev.off()}
