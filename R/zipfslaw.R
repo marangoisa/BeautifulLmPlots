@@ -8,7 +8,6 @@
 #@sepa: higher numbers reduce the frequency at which observation names apper
 #example 
 #zipfslaw(data=trade,var='GDP_2015_USD',name='Name_country',namevar = 'GDP',sepa=3)
-
 zipfslaw<-function(data,var,name, namevar,sepa,color,width,pointsize,height,adress){
   if(missing(sepa)){sepa=1}
   if(missing(color)){color<-'gray'}
