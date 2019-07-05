@@ -14,8 +14,8 @@
 #@ini: number beyond which the frequency of names is reduced
 #@font: plot font
 #example 
-#poti<-plot_lreg(x=trade$Distance_from_Largest_City_to_NYC_miles,y=trade$Total_Trade_Amount_2015_Thousand_USD,titl='trade',xlab = 'trade',ylab='distance',w=trade$GDP_2015_USD,names=trade$Name_country)
-#poti
+#exmp<-plot_lreg(x=trade$Distance_from_Largest_City_to_NYC_miles,y=trade$Total_Trade_Amount_2015_Thousand_USD,titl='trade',xlab = 'distance',ylab='trade',w=trade$GDP_2015_USD,names=trade$Name_country)
+#exmp
 
 plot_lreg<-function(x,y,titl,xlab,ylab,scx,scy,w,names,sepa,ini,font){
   if(!require(ggplot2, quietly = TRUE)){install.packages('ggplot',dep = TRUE,quietly = TRUE)}
