@@ -64,7 +64,7 @@ plot_lreg<-function(x,y,titl,xlab,ylab,scx,scy,w,names,sepa,ini,font){
     ylab(ylab)+
     scale_y_continuous(trans = 'log2',breaks=stepy)+ 
     scale_x_continuous(trans = 'log2',breaks=stepx)+
-    geom_smooth(method='lm', se = FALSE,aes(colour=eql))+
+    geom_smooth(method='lm', se = FALSE,aes(colour=eql,weight=w))+
     theme_classic(base_family = font)+
     theme(legend.position = "bottom",plot.title = element_text(hjust = 0.5))+
     scale_colour_manual(name='reg',values="black")+
